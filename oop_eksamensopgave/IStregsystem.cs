@@ -6,13 +6,13 @@ namespace oop_eksamensopgave
 {
     interface IStregsystem
     {
-        IEnumerable<Product> ActiveProducts { get; }
-        InsertCashTransaction AddCreditsToAccount(User user, int amount);
-        BuyTransaction BuyProduct(User user, Product product);
-        Product GetProductByID(int id);
+        IEnumerable<Product> ActiveProducts { get; } //check
+        InsertCashTransaction AddCreditsToAccount(User user, int amount); //check
+        BuyTransaction BuyProduct(User user, Product product); //check
+        Product GetProductByID(int id); //check
         IEnumerable<Transaction> GetTransactions(User user, int count);
         User GetUsers(Func<User, bool> predicate);
-        User GetUserByUsername(string username);
+        User GetUserByUsername(string username); //check
         event UserBalanceNotification UserBalanceWarning;
     }
 }
