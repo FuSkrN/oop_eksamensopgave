@@ -13,12 +13,14 @@ namespace oop_eksamensopgave
 
         BuyTransaction BuyProduct(User user, Product product)
         {
+            user.Transactions.Insert(0, new BuyTransaction(TransactionId, user, CurrentDate, product.Price, product));
             TransactionId++;
             return new BuyTransaction(TransactionId, user, CurrentDate, product.Price, product);
         }
 
         InsertCashTransaction AddCreditsToAccount(User user, Decimal amount)
         {
+            user.Transactions.Insert(0, new InsertCashTransaction(TransactionId, user, CurrentDate, amount));
             TransactionId++;
             user.Balance += amount;
             return new InsertCashTransaction(TransactionId, user, CurrentDate, amount);
@@ -50,7 +52,13 @@ namespace oop_eksamensopgave
             return null;
         }
 
-        
+        IEnumerable<Transaction> GetTransactions(User user, int count)
+        {
+            for (int i = 0; i <= count; i++)
+            {
+                yield return 
+            }
+        }
 
         event UserBalanceNotification UserBalanceWarning;
     }

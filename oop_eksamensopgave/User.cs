@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace oop_eksamensopgave
@@ -105,6 +106,9 @@ namespace oop_eksamensopgave
                 }
             }
         }
+
+        private List<Transaction> transactions = new List<Transaction>();
+        internal List<Transaction> Transactions { get => transactions; set => transactions = value; }
 
         void validateEmail(string input)
         {
