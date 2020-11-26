@@ -56,7 +56,7 @@ namespace oop_eksamensopgave
         {
             for (int i = 0; i <= count; i++)
             {
-                yield return 
+                yield return user.Transactions[count];
             }
         }
 
