@@ -52,13 +52,7 @@ namespace oop_eksamensopgave
             return null;
         }
 
-        IEnumerable<Transaction> GetTransactions(User user, int count)
-        {
-            for (int i = 0; i <= count; i++)
-            {
-                yield return user.Transactions[count];
-            }
-        }
+        
 
         event UserBalanceNotification UserBalanceWarning;
     }
